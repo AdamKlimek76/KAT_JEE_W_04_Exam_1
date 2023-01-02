@@ -30,8 +30,13 @@ public class Main8 {
             System.out.println("Błąd wejścia lub wyjścia");
         }
         for (int i = 0; i < persNumb; i++) {
-            System.out.println("Podaj login");
-            String name = scan.next();
+            //Wykluczenie spacji w loginie
+            boolean isInNameSpace = true;
+            while (isInNameSpace == true) {
+                System.out.println("Podaj login");
+                String name = scan.next();
+                isInNameSpace=false;
+            }
             System.out.println("Podaj ilość punktów");
             Scanner scanPoints = new Scanner(System.in);
             while (!scanPoints.hasNextInt()) {
